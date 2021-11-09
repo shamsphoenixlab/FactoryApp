@@ -81,8 +81,7 @@ class EmployeesController extends Controller
 
             foreach ($tempArray as $key=> $value){
                 if($value['first_name'] === $data['first_name'] && 
-                $value['last_name'] === $data['last_name'] && 
-                $value['department'] === $data['department']){
+                $value['last_name'] === $data['last_name']){
                     return response()->json([
                         'status' => 'failed',
                         'message' => 'Record already exists.',
