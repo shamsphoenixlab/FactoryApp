@@ -36,14 +36,19 @@ export default class ViewSalary extends Component {
             (v) => v.value === data.salary_type
           ).name;
 
+        // Type 2 - Fixed each month
         let calc_salary = data.salary;
         switch (data.salary_type) {
+          // Type 1 - By hourly wage
           case 1:
-            calc_salary *= data.work_hours;
+            calc_salary = data.salary * data.work_hours;
             break;
+
+          // Type 3 - Full pay (0.75 if < 100)
           case 3:
-            calc_salary *= data.work_hours;
-            if (data.work_hours < 100) calc_salary *= data.work_hours * 0.75;
+            calc_salary = data.salary * data.work_hours;
+            if (data.work_hours < 100)
+              calc_salary = data.salary * data.work_hours * 0.75;
             break;
           default:
             break;
