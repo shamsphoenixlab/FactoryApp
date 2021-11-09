@@ -2,6 +2,11 @@
 ## Installation
 
 ```sh
+cd backend
+composer install
+```
+
+```sh
 cd factory
 npm install
 ```
